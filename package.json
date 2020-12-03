@@ -1,0 +1,81 @@
+{
+  "name": "d2-admin",
+  "version": "1.20.1",
+  "scripts": {
+    "serve": "vue-cli-service serve --open",
+    "start": "npm run serve",
+    "dev": "npm run serve",
+    "build": "vue-cli-service build",
+    "build:preview": "NODE_OPTIONS=--max_old_space_size=4096 vue-cli-service build --mode preview",
+    "lint": "vue-cli-service lint --fix",
+    "test:unit": "vue-cli-service test:unit"
+  },
+  "dependencies": {
+    "@d2-projects/d2-crud": "^2.1.2",
+    "axios": "^0.19.0",
+    "axios-mock-adapter": "^1.18.2",
+    "better-scroll": "^1.15.2",
+    "core-js": "^3.4.3",
+    "d2-crud-plus": "^1.16.7",
+    "d2-crud-x": "^2.10.5",
+    "d2p-extends": "^1.9.17",
+    "dayjs": "^1.9.3",
+    "echarts": "^4.9.0",
+    "element-ui": "^2.13.2",
+    "faker": "^4.1.0",
+    "flex.css": "^1.1.7",
+    "fuse.js": "^5.2.3",
+    "hotkeys-js": "^3.8.1",
+    "js-cookie": "^2.2.1",
+    "lodash": "^4.17.20",
+    "lowdb": "^1.0.0",
+    "nprogress": "^0.2.0",
+    "screenfull": "^5.0.2",
+    "sortablejs": "^1.12.0",
+    "ua-parser-js": "^0.7.22",
+    "v-charts": "^1.19.0",
+    "vue": "^2.6.12",
+    "vue-i18n": "^8.22.0",
+    "vue-router": "^3.4.7",
+    "vuex": "^3.5.1",
+    "vxe-table": "^2.9.25"
+  },
+  "devDependencies": {
+    "@d2-projects/vue-filename-injector": "^1.1.0",
+    "@kazupon/vue-i18n-loader": "^0.5.0",
+    "@vue/cli-plugin-babel": "^4.5.7",
+    "@vue/cli-plugin-eslint": "^4.5.7",
+    "@vue/cli-plugin-router": "^4.5.7",
+    "@vue/cli-plugin-unit-jest": "^4.5.7",
+    "@vue/cli-plugin-vuex": "^4.5.7",
+    "@vue/cli-service": "^4.5.7",
+    "@vue/eslint-config-standard": "^5.1.2",
+    "@vue/test-utils": "^1.1.0",
+    "babel-eslint": "^10.0.3",
+    "compression-webpack-plugin": "^3.0.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-vue": "^6.2.2",
+    "sass": "^1.27.0",
+    "sass-loader": "^8.0.0",
+    "svg-sprite-loader": "^4.1.6",
+    "text-loader": "^0.0.1",
+    "vue-cli-plugin-i18n": "^1.0.1",
+    "vue-template-compiler": "^2.6.12",
+    "webpack-bundle-analyzer": "^3.9.0",
+    "webpack-theme-color-replacer": "^1.3.14"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/d2-projects/d2-admin.git"
+  }
+}
