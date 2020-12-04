@@ -147,6 +147,16 @@ export const crudOptions = (vm) => {
         type: 'select',
         dict: {
           data: vm.statusDict
+        },
+        search: {
+          order: 2,
+          disabled: false,
+          component: { // 查询 使用选择框组件，并且是可以清除的
+            name: 'dict-select',
+            props: {
+              clearable: true
+            }
+          }
         }
       },
       {

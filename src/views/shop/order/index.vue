@@ -4,7 +4,6 @@
       ref="d2Crud"
       v-bind="_crudProps"
       v-on="_crudListeners"
-      :loading="loading"
       @change-status-emit="openChangeStatusDialog"
       @show-emit="showOrder"
       @book-goods="bookGoods">
@@ -112,7 +111,6 @@ export default {
         contact_tel: ''
       },
       showData: [],
-      loading: false,
       drawerOrderShow: false,
       formLabelWidth: '180px',
       multipleSelection: undefined,
