@@ -45,7 +45,7 @@ export default {
           title: '商品名称',
           key: 'name',
           align: 'center',
-          width: 350
+          width: 280
         },
         {
           title: '数量',
@@ -65,6 +65,16 @@ export default {
         {
           title: '总金额(元)',
           key: 'total',
+          align: 'center'
+        },
+        {
+          title: '生产日期',
+          key: 'product_date',
+          align: 'center'
+        },
+        {
+          title: '保质日期',
+          key: 'shelf_life',
           align: 'center'
         }
       ],

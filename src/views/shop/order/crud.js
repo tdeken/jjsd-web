@@ -11,7 +11,8 @@ export const crudOptions = (vm) => {
     },
     rowHandle: {
       remove: {
-        icon: '',
+        thin: true,
+        text: null,
         show (index, row) {
           return row.status === 0
         }
@@ -21,14 +22,27 @@ export const crudOptions = (vm) => {
       },
       custom: [
         {
-          text: '详情',
+          thin: true,
+          text: null,
+          icon: 'el-icon-view',
           emit: 'show-emit',
           size: 'small', // 按钮大小
           order: 1
         },
         {
-          text: '修改状态',
+          thin: true,
+          text: null,
+          type: 'info',
+          icon: 'el-icon-printer',
+          emit: 'print-emit',
+          size: 'small', // 按钮大小
+          order: 1
+        },
+        {
+          thin: true,
+          text: null,
           type: 'primary',
+          icon: 'el-icon-edit',
           emit: 'change-status-emit',
           size: 'small', // 按钮大小
           order: 2,

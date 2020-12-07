@@ -133,6 +133,15 @@ const frameIn = [
         component: _import('shop/goodsformat')
       },
       {
+        path: 'goods-shelf-life/index',
+        name: 'shop-goods-shelf-life-index',
+        meta: {
+          title: '商品保质期',
+          auth: true
+        },
+        component: _import('shop/goodshelflife')
+      },
+      {
         path: 'customer/index',
         name: 'shop-customer-index',
         meta: {

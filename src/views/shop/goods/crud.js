@@ -94,7 +94,7 @@ const showField = [
     title: '库存',
     key: 'stock',
     type: 'number',
-    width: 120,
+    width: 100,
     form: {
       value: -1,
       component: {
@@ -136,7 +136,7 @@ const showField = [
     key: 'format',
     type: 'select',
     align: 'center',
-    width: 100,
+    width: 80,
     form: {
       rules: [
         { required: true, message: '请选择单位' }
@@ -161,7 +161,7 @@ const showField = [
     title: '采购价(元)',
     key: 'purchase_price',
     type: 'number',
-    width: 100,
+    width: 80,
     form: {
       value: 0,
       component: {
@@ -177,7 +177,7 @@ const showField = [
     title: '批发价(元)',
     key: 'wholesale_price',
     type: 'number',
-    width: 100,
+    width: 80,
     form: {
       value: 0,
       component: {
@@ -191,13 +191,46 @@ const showField = [
     title: '零售价(元)',
     key: 'retail_price',
     type: 'number',
-    width: 100,
+    width: 80,
     form: {
       value: 0,
       component: {
         name: 'el-input-number',
         min: 0,
         precision: 2
+      }
+    }
+  },
+  {
+    title: '生产日期',
+    key: 'product_date',
+    align: 'center',
+    form: {
+      component: {
+        name: 'el-date-picker',
+        valueFormat: 'yyyy-MM-dd'
+      },
+    }
+  },
+  {
+    title: '保质日期',
+    type: 'select',
+    key: 'shelf_life',
+    align: 'center',
+    form: {
+      component: {
+        name: 'dict-select',
+        props: {
+          filterable: true
+        }
+      }
+    },
+    dict: {
+      url: '/shop/goods-shelf-life/index?no_page=1',
+      value: 'title',
+      label: 'title',
+      getData: (url, dict) => { // 配置此参数会覆盖全局的getRemoteDictFunc
+        return request({ url: url }).then(ret => { return ret.data.list })
       }
     }
   },

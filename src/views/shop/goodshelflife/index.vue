@@ -4,49 +4,36 @@
       ref="d2Crud"
       v-bind="_crudProps"
       v-on="_crudListeners"
-      add-title="添加商品">
+      add-title="添加保质期">
       <div slot="header">
         <crud-search ref="search" :options="crud.searchOptions" @submit="handleSearch" />
         <el-button-group>
-          <el-button size="small" type="primary" @click="addRow"><i class="el-icon-plus"/> 新增商品</el-button>
+          <el-button size="small" type="primary" @click="addRow"><i class="el-icon-plus"/> 新增保质期</el-button>
           <el-button   size="small" type="danger" @click="batchDelete"><i class="el-icon-delete"></i> 批量删除</el-button>
         </el-button-group>
         <crud-toolbar :search.sync="crud.searchOptions.show"
                       :compact.sync="crud.pageOptions.compact"
-                      @refresh="refreshCache()"/>
+                      @refresh="doRefresh()"/>
 
       </div>
-
-      <template slot='stockSlot' slot-scope='scope'>
-        <span v-if="scope.row.stock === -1">
-          库存充足
-        </span>
-        <span v-else>{{scope.row.stock}}</span>
-      </template>
-      <template slot='shelf_lifeFormSlot' slot-scope='scope'>
-        <el-input-number v-model="scope.form.shelf_life" value="1" :precision="0" :step="1"></el-input-number> 个月
-      </template>
     </d2-crud-x>
 
   </d2-container>
 </template>
 
 <script>
-import { goodsList, goodsStore, goodsUpdate, goodsDestroy } from './api'
+import { updateRequest, listRequest, storeRequest, destroyRequest } from './api'
 import { crudOptions } from './crud'
 import { d2CrudPlus } from 'd2-crud-plus'
 import { getDateDaterange } from '@/help/func'
 
 export default {
-  name: 'goodsList',
+  name: 'goodsUnitList',
   mixins: [d2CrudPlus.crud],
   data () {
     return {
       tableData: undefined,
-      doFirstRequest: false,
-      refreshType: false,
-      dialogImageUrl: '',
-      dialogVisible: false
+      doFirstRequest: false
     }
   },
   methods: {
@@ -65,35 +52,25 @@ export default {
         delete query.page
         this.doFirstRequest = true
       }
-      if (this.refreshType) {
-        query.refresh = 1
-        this.refreshType = false
-      }
-    },
-    refreshCache () {
-      this.refreshType = true
-      this.doRefresh()
     },
     getCrudOptions () {
       return crudOptions
     },
     pageRequest (query) {
       this.beforeQuery(query)
-      return goodsList(query)
+      return listRequest(query)
     },
     addRequest (row) {
-      delete row.created_date
-      return goodsStore(row)
+      return storeRequest(row)
     },
     updateRequest (row) {
-      delete row.created_date
-      return goodsUpdate(row)
+      return updateRequest(row)
     },
     delRequest (row) {
-      return goodsDestroy(row.id)
+      return destroyRequest(row.id)
     },
     batchDelRequest (ids) {
-      return goodsDestroy(ids)
+      return destroyRequest(ids)
     }
   }
 }

@@ -6,7 +6,8 @@
       v-on="_crudListeners"
       @change-status-emit="openChangeStatusDialog"
       @show-emit="showOrder"
-      @book-goods="bookGoods">
+      @book-goods="bookGoods"
+      @print-emit="printOrder">
       <div slot="header">
         <crud-search ref="search" :options="crud.searchOptions" @submit="handleSearch" />
         <el-button-group>
@@ -74,35 +75,46 @@
       direction="rtl"
       size="50%">
       <showComponent v-bind:data="showData"
-      v-bind:consignee="showDetail.consignee"
-      v-bind:amount="showDetail.amount"
-      v-bind:remark="showDetail.remark"
-      v-bind:address="showDetail.address"
-      v-bind:real_amount="showDetail.real_amount"
-      v-bind:contact_tel="showDetail.contact_tel">
+      v-bind:consignee="rowDetail.consignee"
+      v-bind:amount="rowDetail.amount"
+      v-bind:remark="rowDetail.remark"
+      v-bind:address="rowDetail.address"
+      v-bind:real_amount="rowDetail.real_amount"
+      v-bind:contact_tel="rowDetail.contact_tel">
       </showComponent>
+    </el-drawer>
+    <el-drawer
+      title="订单打印"
+      :visible.sync="drawerOrderPrint"
+      direction="rtl"
+      size="100%">
+      <printComponent v-bind:data="printData.goods_list"
+      v-bind:customer="printData.customer"
+      v-bind:order_data="printData.order_data"
+      v-bind:provider="printData.provider"></printComponent>
     </el-drawer>
   </d2-container>
 </template>
 
 <script>
-import { listRequest, changeStatusRequest, destroyRequest, goodsListRequest } from './api'
+import { listRequest, changeStatusRequest, destroyRequest, goodsListRequest, printDataRequest } from './api'
 import { listRequest as addressListRequest } from '../address/api'
 import { crudOptions } from './crud'
 import { d2CrudPlus } from 'd2-crud-plus'
 import { getDateDaterange } from '@/help/func'
 import showComponent from './show'
+import printComponent from './print'
 
 export default {
   name: 'customerList',
   mixins: [d2CrudPlus.crud],
-  components: { showComponent },
+  components: { showComponent, printComponent },
   data () {
     return {
       addDialogShow: false,
       addressList: [],
       addressId: '',
-      showDetail: {
+      rowDetail: {
         amount: '0.00',
         remark: '',
         consignee: '',
@@ -111,7 +123,29 @@ export default {
         contact_tel: ''
       },
       showData: [],
+      printData: {
+        goods_list: [],
+        customer: {
+          consignee: '',
+          contact_tel: '',
+          address: ''
+        },
+        order_data: {
+          amount: '0.00',
+          amount_chn: '',
+          create_date: '',
+          print_date: '',
+          order_no: ''
+        },
+        provider: {
+          name: '',
+          address: '',
+          tel: ''
+        },
+
+      },
       drawerOrderShow: false,
+      drawerOrderPrint: false,
       formLabelWidth: '180px',
       multipleSelection: undefined,
       doFirstRequest: false,
@@ -133,6 +167,16 @@ export default {
     }
   },
   methods: {
+    printOrder ({ row }) {
+      printDataRequest({
+        id: row.id,
+        no_page: 1
+      }).then(res => {
+        this.rowDetail = row
+        this.printData = res.data
+        this.drawerOrderPrint = true
+      })
+    },
     bookGoods () {
       if (this.addressId === '') {
         this.$message.error('请选择收货地址')
@@ -160,7 +204,7 @@ export default {
         order_id: row.id,
         no_page: 1
       }).then(res => {
-        this.showDetail = row
+        this.rowDetail = row
         this.showData = res.data.list
         this.drawerOrderShow = true
       })

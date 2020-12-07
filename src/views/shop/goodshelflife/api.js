@@ -6,23 +6,7 @@ import { request } from '@/api/service'
  */
 export function listRequest (query = {}) {
   return request({
-    url: 'shop/order/index',
-    method: 'get',
-    params: query
-  })
-}
-
-export function goodsListRequest (query = {}) {
-  return request({
-    url: 'shop/order-goods/index',
-    method: 'get',
-    params: query
-  })
-}
-
-export function printDataRequest (query = {}) {
-  return request({
-    url: 'shop/order/print-data',
+    url: 'shop/goods-shelf-life/index',
     method: 'get',
     params: query
   })
@@ -30,14 +14,14 @@ export function printDataRequest (query = {}) {
 
 export function storeRequest (data) {
   return request({
-    url: 'shop/order/store',
+    url: 'shop/goods-shelf-life/store',
     method: 'post',
     data: data
   })
 }
-export function changeStatusRequest (data) {
+export function updateRequest (data) {
   return request({
-    url: 'shop/order/change-status',
+    url: 'shop/goods-shelf-life/update',
     method: 'post',
     data: data
   })
@@ -45,7 +29,7 @@ export function changeStatusRequest (data) {
 
 export function destroyRequest (id) {
   return request({
-    url: 'shop/order/destroy',
+    url: 'shop/goods-shelf-life/destroy',
     method: 'post',
     data: { id: id }
   })

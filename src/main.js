@@ -16,9 +16,13 @@ import VCharts from 'v-charts'
 import router from './router'
 import { frameInRoutes } from '@/router/routes'
 
+// vue 打印插件
+import Print from '@/plugin/print'
+
 // 核心插件
 Vue.use(d2Admin)
 Vue.use(VCharts)
+Vue.use(Print)
 
 new Vue({
   router,
