@@ -86,7 +86,7 @@
       </el-row>
       <el-row :gutter="20" style="margin-top: 4px">
         <el-col :span="8">
-          <p style="margin: 0">订单总金额：956{{order_data.amount}} 元</p>
+          <p style="margin: 0">订单总金额：{{order_data.amount}} 元</p>
         </el-col>
         <el-col :span="16">
           <p style="margin: 0">订单总金额大写：{{order_data.amount_chn}}</p>
