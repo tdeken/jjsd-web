@@ -56,17 +56,17 @@
           </tr>
           </thead>
           <tbody>
-          <tr v-for="item in data">
-            <td>{{ item.number }}</td>
-            <td>{{ item.name }}</td>
-            <td align="center">{{ item.book_num }}</td>
-            <td align="center">{{ item.unit }}</td>
-            <td align="center">{{ item.format }}</td>
-            <td align="center">{{ item.price }}</td>
-            <td align="center">{{ item.total }}</td>
-            <td align="center">{{ item.product_date }}</td>
-            <td align="center">{{ item.shelf_life }}</td>
-          </tr>
+             <tr v-for="item in data">
+              <td>{{ item.number }}</td>
+              <td>{{ item.name }}</td>
+              <td align="center">{{ item.book_num }}</td>
+              <td align="center">{{ item.unit }}</td>
+              <td align="center">{{ item.format }}</td>
+              <td align="center">{{ item.price }}</td>
+              <td align="center">{{ item.total }}</td>
+              <td align="center">{{ item.product_date }}</td>
+              <td align="center">{{ item.shelf_life }}</td>
+            </tr>
           </tbody>
         </table>
       </el-row>
@@ -104,7 +104,7 @@
 </template>
 
 <script>
-import {printDataRequest } from '../api'
+import { printDataRequest } from '../api'
 
 export default {
   name: 'orderPrint',
@@ -129,7 +129,7 @@ export default {
         name_split: '',
         address: '',
         tel: '',
-        printer: '',
+        printer: ''
       }
     }
   },
@@ -143,7 +143,7 @@ export default {
     goOrderList () {
       this.$router.push({ path: '/shop/order/index' })
     },
-    fetchData(){
+    fetchData () {
       printDataRequest({
         id: this.$route.query.order_id,
         no_page: 1
