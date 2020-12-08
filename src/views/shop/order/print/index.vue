@@ -71,14 +71,17 @@
         </table>
       </el-row>
       <el-row :gutter="20" style="margin-top: 4px">
-        <el-col :span="8">
+        <el-col :span="6">
           <p style="margin: 0">开票人：{{provider.printer}}</p>
         </el-col>
-        <el-col :span="8">
+        <el-col :span="6">
           <p style="margin: 0">配送员：</p>
         </el-col>
-        <el-col :span="8">
+        <el-col :span="6">
           <p style="margin: 0">收货人：</p>
+        </el-col>
+        <el-col :span="6">
+          <p style="margin: 0">共 {{order_data.total_goods}} 样商品</p>
         </el-col>
       </el-row>
       <el-row :gutter="20" style="margin-top: 4px">
@@ -86,7 +89,7 @@
           <p style="margin: 0">订单总金额：956{{order_data.amount}} 元</p>
         </el-col>
         <el-col :span="16">
-          <p style="margin: 0">订单总金额大写：{{order_data.amount_chn}} 人民币</p>
+          <p style="margin: 0">订单总金额大写：{{order_data.amount_chn}}</p>
         </el-col>
       </el-row>
       <el-row :gutter="20" style="margin-top: 4px">
@@ -118,7 +121,8 @@ export default {
         amount_chn: '',
         create_date: '',
         print_date: '',
-        order_no: ''
+        order_no: '',
+        total_goods: 0
       },
       provider: {
         name: '',
