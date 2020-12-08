@@ -1,5 +1,5 @@
 <template>
-  <d2-container  :class="{'page-compact':crud.pageOptions.compact}">
+  <d2-container :class="{'page-compact':crud.pageOptions.compact}">
     <d2-crud-x
       ref="d2Crud"
       v-bind="_crudProps"
@@ -97,7 +97,7 @@
 </template>
 
 <script>
-import { listRequest, changeStatusRequest, destroyRequest, goodsListRequest, printDataRequest } from './api'
+import { listRequest, changeStatusRequest, destroyRequest, goodsListRequest } from './api'
 import { listRequest as addressListRequest } from '../address/api'
 import { crudOptions } from './crud'
 import { d2CrudPlus } from 'd2-crud-plus'
@@ -168,14 +168,7 @@ export default {
   },
   methods: {
     printOrder ({ row }) {
-      printDataRequest({
-        id: row.id,
-        no_page: 1
-      }).then(res => {
-        this.rowDetail = row
-        this.printData = res.data
-        this.drawerOrderPrint = true
-      })
+      this.$router.push({ path: '/shop/order/print', query: { order_id: row.id } })
     },
     bookGoods () {
       if (this.addressId === '') {

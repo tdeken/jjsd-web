@@ -190,6 +190,11 @@ const frameOut = [
     path: '/login',
     name: 'login',
     component: _import('system/login')
+  },
+  {
+    path: '/shop/order/print',
+    name: 'shop-order-print',
+    component: _import('shop/order/print')
   }
 ]
 
