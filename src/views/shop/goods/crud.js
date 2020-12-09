@@ -209,7 +209,7 @@ const showField = [
       component: {
         name: 'el-date-picker',
         valueFormat: 'yyyy-MM-dd'
-      },
+      }
     }
   },
   {

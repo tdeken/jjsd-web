@@ -141,8 +141,7 @@ export default {
           name: '',
           address: '',
           tel: ''
-        },
-
+        }
       },
       drawerOrderShow: false,
       drawerOrderPrint: false,

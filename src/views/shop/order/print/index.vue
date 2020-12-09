@@ -141,7 +141,9 @@ export default {
       this.$print(this.$refs.print)
     },
     goOrderList () {
-      this.$router.push({ path: '/shop/order/index' })
+      this.$router.push({
+        path: '/shop/order/index'
+      })
     },
     fetchData () {
       printDataRequest({
