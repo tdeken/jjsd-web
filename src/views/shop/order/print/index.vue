@@ -56,7 +56,7 @@
           </tr>
           </thead>
           <tbody>
-             <tr v-for="item in data">
+             <tr v-for="item in data" :key="item">
               <td>{{ item.number }}</td>
               <td>{{ item.name }}</td>
               <td align="center">{{ item.book_num }}</td>
