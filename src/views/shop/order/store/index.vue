@@ -5,8 +5,8 @@
         <el-button slot="header" type="primary" @click="dialogVisible = true" round style="float:right;">添加货物</el-button>
         <el-button slot="header" type="danger" @click="clearBookGoods" round style="float:left;">清空货物</el-button>
       </div>
-
     </template>
+
     <d2-crud-x
       :columns="columns"
       :data="data"
@@ -198,6 +198,15 @@ export default {
           confirm: true
         }
       }
+    }
+  },
+  watch: {
+    '$route' (to, from) {
+      this.addGoodsForm.address_id = this.$route.query.id
+      this.addGoodsForm.customer_id = this.$route.query.customer_id
+      this.consigneeInfo(this.$route.query.id)
+      this.initGoodList()
+      this.fetchData({ address_id: this.$route.query.id })
     }
   },
   mounted () {

@@ -211,6 +211,15 @@ export default {
     this.initGoodList()
     this.fetchData({ address_id: this.$route.query.id, order_id: this.addGoodsForm.order_id })
   },
+  watch: {
+    '$route' (to, from) {
+      this.addGoodsForm.address_id = this.$route.query.id
+      this.addGoodsForm.customer_id = this.$route.query.customer_id
+      this.consigneeInfo(this.$route.query.id)
+      this.initGoodList()
+      this.fetchData({ address_id: this.$route.query.id })
+    }
+  },
   computed: {
     ...mapState('d2admin/page', [
       'opened',
