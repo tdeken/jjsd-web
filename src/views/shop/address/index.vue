@@ -71,7 +71,7 @@ export default {
       return destroyRequest(ids)
     },
     bookGoods (event) {
-      this.$router.push({ path: '/shop/order/store', query: { id: event.row.id, customer_id: event.row.customer_id } })
+      this.$router.push({ name: 'shop-order-store', query: { id: event.row.id, customer_id: event.row.customer_id } })
     }
   }
 }

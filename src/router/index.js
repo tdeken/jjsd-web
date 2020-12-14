@@ -83,7 +83,7 @@ router.beforeEach(async (to, from, next) => {
         await fetchPermissionInfo()
         isFetchPermissionInfo = true
         util.cookies.set('isFetchPermissionInfo', true)
-        next(to.path, true)
+        next(to.fullPath, true)
       } else {
         next()
       }

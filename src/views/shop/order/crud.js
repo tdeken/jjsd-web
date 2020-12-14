@@ -52,6 +52,21 @@ export const crudOptions = (vm) => {
             }
             return true
           }
+        },
+        {
+          thin: true,
+          text: null,
+          type: 'warning',
+          icon: 'el-icon-star-off',
+          emit: 'update-order-emit',
+          size: 'small', // 按钮大小
+          order: 3,
+          show (index, row) {
+            if (row.status === 0) {
+              return true
+            }
+            return false
+          }
         }
       ]
     },

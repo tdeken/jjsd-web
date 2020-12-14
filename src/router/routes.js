@@ -169,6 +169,15 @@ const frameIn = [
         component: _import('shop/order/store')
       },
       {
+        path: 'order/update',
+        name: 'shop-order-update',
+        meta: {
+          title: '修改订单',
+          auth: true
+        },
+        component: _import('shop/order/update')
+      },
+      {
         path: 'order/index',
         name: 'shop-order-index',
         meta: {

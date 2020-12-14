@@ -7,7 +7,8 @@
       @change-status-emit="openChangeStatusDialog"
       @show-emit="showOrder"
       @book-goods="bookGoods"
-      @print-emit="printOrder">
+      @print-emit="printOrder"
+      @update-order-emit="updateOrder">
       <div slot="header">
         <crud-search ref="search" :options="crud.searchOptions" @submit="handleSearch" />
         <el-button-group>
@@ -15,7 +16,7 @@
         </el-button-group>
         <crud-toolbar :search.sync="crud.searchOptions.show"
                       :compact.sync="crud.pageOptions.compact"
-                      @refresh="doRefresh()"/>
+                      @refresh="refreshCache()"/>
       </div>
     </d2-crud-x>
     <el-dialog
@@ -24,7 +25,7 @@
       width="40%">
       <el-form>
         <el-form-item label="选择收货地址：" :label-width="formLabelWidth">
-          <el-select v-model="addressId" filterable placeholder="请选择商品" reserve-keyword remote :remote-method="searchAddress">
+          <el-select v-model="addressId" filterable placeholder="请选择地址" reserve-keyword remote :remote-method="searchAddress">
             <el-option
               v-for="item in addressList"
               :key="item.id + '_' + item.customer_id"
@@ -37,6 +38,27 @@
       <div slot="footer" class="dialog-footer">
         <el-button @click="addDialogShow = false">取 消</el-button>
         <el-button type="primary" @click="bookGoods">确 定</el-button>
+      </div>
+    </el-dialog>
+    <el-dialog
+      title="修改订单"
+      :visible.sync="updateDialogShow"
+      width="40%">
+      <el-form>
+        <el-form-item label="选择收货地址：" :label-width="formLabelWidth">
+          <el-select v-model="updateOrderForm.address_id" filterable placeholder="请选择地址" reserve-keyword remote :remote-method="searchAddress">
+            <el-option
+              v-for="item in addressList"
+              :key="item.id + '_' + item.customer_id"
+              :label="item.address + ' / ' +item.consignee"
+              :value="item.id + '_' + item.customer_id">
+            </el-option>
+          </el-select>
+        </el-form-item>
+      </el-form>
+      <div slot="footer" class="dialog-footer">
+        <el-button @click="updateDialogShow = false">取 消</el-button>
+        <el-button type="primary" @click="updateBookGoods">确 定</el-button>
       </div>
     </el-dialog>
     <el-dialog
@@ -97,7 +119,7 @@
 </template>
 
 <script>
-import { listRequest, changeStatusRequest, destroyRequest, goodsListRequest } from './api'
+import { listRequest, changeStatusRequest, destroyRequest, goodsListRequest, updateInfoRequest } from './api'
 import { listRequest as addressListRequest } from '../address/api'
 import { crudOptions } from './crud'
 import { d2CrudPlus } from 'd2-crud-plus'
@@ -112,8 +134,10 @@ export default {
   data () {
     return {
       addDialogShow: false,
+      updateDialogShow: false,
       addressList: [],
       addressId: '',
+      addressSelectValue: '',
       rowDetail: {
         amount: '0.00',
         remark: '',
@@ -121,6 +145,11 @@ export default {
         address: '',
         real_amount: '0.00',
         contact_tel: ''
+      },
+      updateOrderForm: {
+        address_id: '',
+        customer_id: 0,
+        order_id: 0
       },
       showData: [],
       printData: {
@@ -166,6 +195,19 @@ export default {
     }
   },
   methods: {
+    updateBookGoods () {
+      const info = this.updateOrderForm.address_id.split('_')
+      updateInfoRequest({ id: this.updateOrderForm.order_id, address_id: info[0] }).then(res => {
+        this.$router.push({ path: '/shop/order/update', query: { id: info[0], customer_id: info[1], order_id: this.updateOrderForm.order_id } })
+        this.addDialogShow = false
+      })
+    },
+    updateOrder ({ row }) {
+      this.updateOrderForm.address_id = row.address_id + "_" + row.customer_id
+      this.updateOrderForm.order_id = row.id
+      this.initAddressList()
+      this.updateDialogShow = true
+    },
     printOrder ({ row }) {
       this.$router.push({ path: '/shop/order/print', query: { order_id: row.id } })
     },
@@ -179,6 +221,7 @@ export default {
       this.addDialogShow = false
     },
     openAddDialog () {
+      this.addressId = ''
       this.initAddressList()
       this.addDialogShow = true
     },
@@ -252,7 +295,11 @@ export default {
     },
     delRequest (row) {
       return destroyRequest(row.id)
-    }
+    },
+    refreshCache () {
+      this.refreshType = true
+      this.doRefresh()
+    },
   }
 }
 </script>

@@ -50,3 +50,11 @@ export function destroyRequest (id) {
     data: { id: id }
   })
 }
+
+export function updateInfoRequest (query) {
+  return request({
+    url: 'shop/order/update-info',
+    method: 'get',
+    params: query
+  })
+}
