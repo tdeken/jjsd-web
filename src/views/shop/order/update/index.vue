@@ -117,7 +117,8 @@ export default {
       editGoodsForm: {
         book_id: 0,
         book_num: 0,
-        price: '0.00'
+        price: '0.00',
+        order_id: 0
       },
       price_info: {
         retail_price: 0,
@@ -284,6 +285,7 @@ export default {
         this.editGoodsForm.book_num = res.data.book_num
         this.editGoodsForm.price = res.data.price
         this.editGoodsForm.address_id = this.addGoodsForm.address_id
+        this.editGoodsForm.order_id = this.addGoodsForm.order_id
         this.dialogVisibleEdit = true
       })
     },
