@@ -82,9 +82,6 @@ const showField = [
     title: '商品编号',
     key: 'number',
     form: {
-      rules: [
-        { required: true, message: '请填写商品编号' }
-      ],
       component: {
         placeholder: '请填写商品的条码编号'
       }

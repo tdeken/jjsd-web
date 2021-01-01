@@ -75,11 +75,7 @@ export const crudOptions = (vm) => {
         title: '收货人电话',
         key: 'contact_tel',
         width: 100,
-        form: {
-          rules: [
-            { required: true, message: '请输入收货人电话' }
-          ]
-        }
+        form: {}
       },
       {
         title: '收货地址',
