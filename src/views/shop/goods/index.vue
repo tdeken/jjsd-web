@@ -13,6 +13,8 @@
         </el-button-group>
         <crud-toolbar :search.sync="crud.searchOptions.show"
                       :compact.sync="crud.pageOptions.compact"
+                      :columns="crud.columns"
+                      @columns-filter-changed="handleColumnsFilterChanged"
                       @refresh="refreshCache()"/>
 
       </div>

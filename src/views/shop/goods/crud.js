@@ -56,6 +56,7 @@ const showField = [
   {
     title: '商品全称',
     key: 'name',
+    width: 180,
     showOverflowTooltip: true,
     form: {
       rules: [
@@ -69,6 +70,8 @@ const showField = [
   {
     title: '商品简称',
     key: 'short_name',
+    width: 180,
+    showOverflowTooltip: true,
     form: {
       rules: [
         { required: true, message: '请填写商品简称' }
@@ -81,6 +84,7 @@ const showField = [
   {
     title: '商品编号',
     key: 'number',
+    width: 180,
     form: {
       component: {
         placeholder: '请填写商品的条码编号'
@@ -90,7 +94,6 @@ const showField = [
   {
     title: '商品类别',
     key: 'category',
-    disabled: true,
     width: 180,
     type: 'select',
     form: {
@@ -227,6 +230,7 @@ const showField = [
     title: '生产日期',
     key: 'product_date',
     align: 'center',
+    width: 100,
     form: {
       component: {
         name: 'el-date-picker',
@@ -239,6 +243,7 @@ const showField = [
     type: 'select',
     key: 'shelf_life',
     align: 'center',
+    width: 100,
     form: {
       component: {
         name: 'dict-select',
@@ -286,6 +291,7 @@ const showField = [
   {
     title: '创建时间',
     key: 'created_date',
+    width: 150,
     form: {
       disabled: true
     }
@@ -318,7 +324,8 @@ export const crudOptions = {
     remove: {
       thin: true,
       text: null
-    }
+    },
+    fixed: 'right'
   },
   // formGroup: {
   //   type: 'collapse', // tab
