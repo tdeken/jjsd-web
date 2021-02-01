@@ -88,19 +88,29 @@ const showField = [
     }
   },
   {
-    title: '库存',
-    key: 'stock',
-    type: 'number',
-    width: 100,
+    title: '商品类别',
+    key: 'category',
+    disabled: true,
+    width: 180,
+    type: 'select',
     form: {
-      value: -1,
       component: {
-        name: 'el-input-number',
-        min: -1,
-        precision: 0
+        props: {
+          filterable: true,
+          multiple: true,
+          clearable: true
+        }
       }
     },
-    rowSlot: true
+    dict: {
+      url: '/shop/goods-category/index?no_page=1',
+      value: 'id',
+      label: 'title',
+      getData: (url, dict) => { // 配置此参数会覆盖全局的getRemoteDictFunc
+        return request({ url: url }).then(ret => { return ret.data.list })
+      }
+    },
+    component: { props: { color: 'auto' } } // 自动染色
   },
   {
     title: '单位',
@@ -199,6 +209,21 @@ const showField = [
     }
   },
   {
+    title: '库存',
+    key: 'stock',
+    type: 'number',
+    width: 100,
+    form: {
+      value: -1,
+      component: {
+        name: 'el-input-number',
+        min: -1,
+        precision: 0
+      }
+    },
+    rowSlot: true
+  },
+  {
     title: '生产日期',
     key: 'product_date',
     align: 'center',
@@ -256,7 +281,7 @@ const showField = [
         }
       },
       helper: '可上传5张图片'
-    }
+    },
   },
   {
     title: '创建时间',

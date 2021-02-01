@@ -142,6 +142,15 @@ const frameIn = [
         component: _import('shop/goodshelflife')
       },
       {
+        path: 'goods-category/index',
+        name: 'shop-goods-category-index',
+        meta: {
+          title: '商品分类',
+          auth: true
+        },
+        component: _import('shop/goodscategory')
+      },
+      {
         path: 'customer/index',
         name: 'shop-customer-index',
         meta: {
