@@ -353,7 +353,7 @@ export default {
     consigneeInfo (id) {
       showRequest({ id: id }).then(res => {
         this.address = res.data.address
-        this.contact_tel = res.data.contact_tel
+        this.contact_tel = res.data.contact_tel?res.data.contact_tel:'(无)'
         this.consignee = res.data.consignee
         this.consignee_id = res.data.id
       })
