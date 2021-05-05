@@ -77,6 +77,14 @@ const showField = [
     }
   },
   {
+    title: '客户地址',
+    key: 'address',
+    disabled: true,
+    view: {
+      disabled: true
+    }
+  },
+  {
     title: '客户固话',
     key: 'loc_number',
     width: 150
