@@ -226,7 +226,7 @@ export default {
       this.addDialogShow = true
     },
     initAddressList (query = {}) {
-      query.per_page = 100
+      query.no_page = 1
       addressListRequest(query).then(res => {
         this.addressList = res.data.list
       })

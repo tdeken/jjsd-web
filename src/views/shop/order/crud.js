@@ -10,9 +10,14 @@ export const crudOptions = (vm) => {
       labelPosition: 'right'
     },
     rowHandle: {
+      dropdown: { // 操作列折叠
+        atLeast: 2, // 至少几个以上的按钮才会被折叠,注意show=false的按钮也会计算在内（行编辑按钮默认是隐藏的也会占一个位置）
+        text: '更多', // dropdown按钮文字
+        type: 'primary',
+        icon: 'el-icon-more'
+      },
       remove: {
-        thin: true,
-        text: null,
+        text: '删除订单',
         show (index, row) {
           return row.status === 0
         }
@@ -22,16 +27,14 @@ export const crudOptions = (vm) => {
       },
       custom: [
         {
-          thin: true,
-          text: null,
+          text: '订单详情',
           icon: 'el-icon-view',
           emit: 'show-emit',
           size: 'small', // 按钮大小
           order: 1
         },
         {
-          thin: true,
-          text: null,
+          text: '打印订单',
           type: 'info',
           icon: 'el-icon-printer',
           emit: 'print-emit',
@@ -39,8 +42,7 @@ export const crudOptions = (vm) => {
           order: 1
         },
         {
-          thin: true,
-          text: null,
+          text: '修改订单状态',
           type: 'primary',
           icon: 'el-icon-edit',
           emit: 'change-status-emit',
@@ -54,13 +56,12 @@ export const crudOptions = (vm) => {
           }
         },
         {
-          thin: true,
-          text: null,
+          text: '修改订单',
           type: 'warning',
           icon: 'el-icon-star-off',
           emit: 'update-order-emit',
           size: 'small', // 按钮大小
-          order: 3,
+          order: 1,
           show (index, row) {
             if (row.status === 0) {
               return true

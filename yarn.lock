@@ -1060,10 +1060,25 @@
     "@babel/types" "^7.4.4"
     esutils "^2.0.2"
 
+"@babel/runtime-corejs3@^7.11.2":
+  version "7.14.0"
+  resolved "https://registry.npmjs.org/@babel/runtime-corejs3/-/runtime-corejs3-7.14.0.tgz#6bf5fbc0b961f8e3202888cb2cd0fb7a0a9a3f66"
+  integrity sha512-0R0HTZWHLk6G8jIk0FtoX+AatCtKnswS98VhXwGImFc759PJRp4Tru0PQYZofyijTFUr+gT8Mu7sgXVJLQ0ceg==
+  dependencies:
+    core-js-pure "^3.0.0"
+    regenerator-runtime "^0.13.4"
+
 "@babel/runtime@^7.11.0":
   version "7.12.1"
   resolved "https://registry.npm.taobao.org/@babel/runtime/download/@babel/runtime-7.12.1.tgz?cache=0&sync_timestamp=1602799933339&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fruntime%2Fdownload%2F%40babel%2Fruntime-7.12.1.tgz#b4116a6b6711d010b2dad3b7b6e43bf1b9954740"
   integrity sha1-tBFqa2cR0BCy2tO3tuQ78bmVR0A=
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
+"@babel/runtime@^7.11.2":
+  version "7.14.0"
+  resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.14.0.tgz#46794bc20b612c5f75e62dd071e24dfd95f1cbe6"
+  integrity sha512-JELkvo/DlpNdJ7dlyw/eY7E0suy5i5GQH+Vlxaq1nsNJ+H7f4Vtv3jMeCEgRhZZQFXTjldYfQgv2qmM6M1v5wA==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -3713,6 +3728,11 @@ core-js-compat@^3.6.2, core-js-compat@^3.6.5:
     browserslist "^4.8.5"
     semver "7.0.0"
 
+core-js-pure@^3.0.0:
+  version "3.11.2"
+  resolved "https://registry.npmjs.org/core-js-pure/-/core-js-pure-3.11.2.tgz#10e3b35788c00f431bc0d601d7551475ec3e792c"
+  integrity sha512-DQxdEKm+zFsnON7ZGOgUAQXBt1UJJ01tOzN/HgQ7cNf0oEHW1tcBLfCQQd1q6otdLu5gAdvKYxKHAoXGwE/kiQ==
+
 core-js@^2.4.0:
   version "2.6.11"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.11.tgz#38831469f9922bded8ee21c9dc46985e0399308c"
@@ -4057,31 +4077,31 @@ cz-conventional-changelog@^3.3.0:
   optionalDependencies:
     "@commitlint/load" ">6.1.1"
 
-d2-crud-plus@^1.16.7:
-  version "1.16.7"
-  resolved "https://registry.npm.taobao.org/d2-crud-plus/download/d2-crud-plus-1.16.7.tgz#3e16949cdf15301c80474a44b022b43f17d8ae56"
-  integrity sha1-PhaUnN8VMByAR0pEsCK0PxfYrlY=
+d2-crud-plus@^2.16.3:
+  version "2.16.3"
+  resolved "https://registry.npmjs.org/d2-crud-plus/-/d2-crud-plus-2.16.3.tgz#1665fbd244d8c895b126c4e88763c965e942475a"
+  integrity sha512-HrrX8B8hBJXoaizmkvb3I9sIfPjuI5Js8i4hC/xJ1rRxPgtzd32QeO5ZCL2bqKKHBxcxs0yeQ1WDfZl2GrJmWg==
   dependencies:
     dayjs "^1.8.17"
-    lodash "^4.17.19"
     vue "^2.6.11"
     vuedraggable "^2.24.0"
 
-d2-crud-x@^2.10.5:
-  version "2.10.5"
-  resolved "https://registry.npm.taobao.org/d2-crud-x/download/d2-crud-x-2.10.5.tgz#7d8bd196cfc28c12f6344f96f88031984c4112dd"
-  integrity sha1-fYvRls/CjBL2NE+W+IAxmExBEt0=
+d2-crud-x@^2.16.4:
+  version "2.16.4"
+  resolved "https://registry.npmjs.org/d2-crud-x/-/d2-crud-x-2.16.4.tgz#03b1b4e6b95768f782b3b733d934e9a150002ff3"
+  integrity sha512-UlQPdZbUF3UxpNbdq8dHi3Ud99s5QR3RsDlH94BfgXswGDvrEswo4ErzGbSZOZstB0hFlJt8SOB19X4iY+nadQ==
   dependencies:
     lodash.clonedeep "^4.5.0"
     lodash.foreach "^4.5.0"
     lodash.get "^4.4.2"
+    lodash.isequal "^4.5.0"
     lodash.merge "^4.5.0"
     lodash.set "^4.3.2"
 
-d2p-extends@^1.9.17:
-  version "1.9.17"
-  resolved "https://registry.npm.taobao.org/d2p-extends/download/d2p-extends-1.9.17.tgz#0c65a92bde16e1d9f8bf3ee329127c87ce4cd8e8"
-  integrity sha1-DGWpK94W4dn4vz7jKRJ8h85M2Og=
+d2p-extends@^2.16.3:
+  version "2.16.3"
+  resolved "https://registry.npmjs.org/d2p-extends/-/d2p-extends-2.16.3.tgz#34daa3e754aa23a39a6d80e1bb112bb2032579b4"
+  integrity sha512-m27Qi4jk1jhPld0d9gvug8KfyXNJ/Oo8YG1EcyHu5LTEc6vqsFz8aaBD/HVmChEh5P/NXQvpxMD+yuIbz3qC4w==
   dependencies:
     base64-js "^1.3.0"
     china-division "^2.2.0"
@@ -4094,6 +4114,7 @@ d2p-extends@^1.9.17:
     quill "^1.3.7"
     spark-md5 "^3.0.0"
     vue "^2.6.11"
+    wangeditor "^4.6.6"
 
 dashdash@^1.12.0:
   version "1.14.1"
@@ -4486,6 +4507,36 @@ ecc-jsbn@~0.1.1:
   dependencies:
     jsbn "~0.1.0"
     safer-buffer "^2.1.0"
+
+echarts-amap@1.0.0-rc.6:
+  version "1.0.0-rc.6"
+  resolved "https://registry.npmjs.org/echarts-amap/-/echarts-amap-1.0.0-rc.6.tgz#5782a74daee52ed44ce3f8f62577561783f09e16"
+  integrity sha1-V4KnTa7lLtRM4/j2JXdWF4PwnhY=
+
+echarts-liquidfill@^2.0.2:
+  version "2.0.6"
+  resolved "https://registry.npmjs.org/echarts-liquidfill/-/echarts-liquidfill-2.0.6.tgz#0668dc61d87a6262003090bd32c55aa8108c252e"
+  integrity sha512-p+AH0O9/BtwXMQQyhjJbMZo+GwRAgWG/DCyK5r27PQzpS0UWrgXu57MyEFc0A8Ub3sRuqEu08BuxwHICBkSWSQ==
+
+echarts-wordcloud@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.npmjs.org/echarts-wordcloud/-/echarts-wordcloud-1.1.3.tgz#07b140c8ba76b19c317b43c310f3d5dc99289ff2"
+  integrity sha512-Et8D5xEAoYkidmHun+hEH+2lF9dhCt6D0JJ390vlr2r/1zwhhZAbcL01CEvG93QcMcJpSvSPK8vRiGkTbMHRxg==
+
+echarts@^4.9.0:
+  version "4.9.0"
+  resolved "https://registry.npmjs.org/echarts/-/echarts-4.9.0.tgz#a9b9baa03f03a2a731e6340c55befb57a9e1347d"
+  integrity sha512-+ugizgtJ+KmsJyyDPxaw2Br5FqzuBnyOWwcxPKO6y0gc5caYcfnEUIlNStx02necw8jmKmTafmpHhGo4XDtEIA==
+  dependencies:
+    zrender "4.3.2"
+
+echarts@^5.0.2:
+  version "5.1.1"
+  resolved "https://registry.npmjs.org/echarts/-/echarts-5.1.1.tgz#b186f162f017c555cfd67b12ede6762bdc3ddfda"
+  integrity sha512-b3nP8M9XwZM2jISuA+fP0EuJv8lcfgWrinel185Npy8bE/UhXTDIPJcqgQOCWdvk0c5CeT6Dsm1xBjmJXAGlxQ==
+  dependencies:
+    tslib "2.0.3"
+    zrender "5.1.0"
 
 editorconfig@^0.15.3:
   version "0.15.3"
@@ -7409,6 +7460,11 @@ lodash.get@^4.4.2:
   resolved "https://registry.npm.taobao.org/lodash.get/download/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
   integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
 
+lodash.isequal@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.npmjs.org/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
+  integrity sha1-QVxEePK8wwEgwizhDtMib30+GOA=
+
 lodash.kebabcase@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.kebabcase/-/lodash.kebabcase-4.1.1.tgz#8489b1cb0d29ff88195cceca448ff6d6cc295c36"
@@ -8101,6 +8157,11 @@ num2fraction@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/num2fraction/-/num2fraction-1.2.2.tgz#6f682b6a027a4e9ddfa4564cd2589d1d4e669ede"
   integrity sha1-b2gragJ6Tp3fpFZM0lidHU5mnt4=
+
+numerify@1.2.9:
+  version "1.2.9"
+  resolved "https://registry.npmjs.org/numerify/-/numerify-1.2.9.tgz#af4696bb1d57f8d3970a615d8b0cd53d932bd559"
+  integrity sha512-X4QzQiytV5ZN3TVLhzbtFzjTarUNnaa1pgNDFqt7u7Nqhxe7FvY2eYrGt4WYHlYXDqgtfC/n/a5nJ2y0LijV8w==
 
 nwsapi@^2.0.7, nwsapi@^2.2.0:
   version "2.2.0"
@@ -9245,6 +9306,11 @@ qiniu-js@^2.5.4:
   version "2.5.5"
   resolved "https://registry.npm.taobao.org/qiniu-js/download/qiniu-js-2.5.5.tgz#77d295f222620f9377d6148f3f757d189a1e4977"
   integrity sha1-d9KV8iJiD5N31hSPP3V9GJoeSXc=
+
+qrcodejs2@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.npmjs.org/qrcodejs2/-/qrcodejs2-0.0.2.tgz#465afe5e39f19facecb932c11f7a186109146ae1"
+  integrity sha1-Rlr+Xjnxn6zsuTLBH3oYYQkUauE=
 
 qs@6.7.0:
   version "6.7.0"
@@ -10907,10 +10973,20 @@ tsconfig@^7.0.0:
     strip-bom "^3.0.0"
     strip-json-comments "^2.0.0"
 
+tslib@2.0.3:
+  version "2.0.3"
+  resolved "https://registry.npmjs.org/tslib/-/tslib-2.0.3.tgz#8e0741ac45fc0c226e58a17bfc3e64b9bc6ca61c"
+  integrity sha512-uZtkfKblCEQtZKBF6EBXVZeQNl82yqtDQdv+eck8u7tdPxjLu2/lp5/uPW+um2tpuxINHWy3GhiccY7QgEaVHQ==
+
 tslib@^1.9.0:
   version "1.11.2"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.11.2.tgz#9c79d83272c9a7aaf166f73915c9667ecdde3cc9"
   integrity sha512-tTSkux6IGPnUGUd1XAZHcpu85MOkIl5zX49pO+jfsie3eP0B6pyhOlLXm3cAC6T7s+euSDDUUV+Acop5WmtkVg==
+
+tslib@^2.1.0:
+  version "2.2.0"
+  resolved "https://registry.npmjs.org/tslib/-/tslib-2.2.0.tgz#fb2c475977e35e241311ede2693cee1ec6698f5c"
+  integrity sha512-gS9GVHRU+RGn5KQM2rllAlR3dU6m7AcpJKdtH8gFvQiC4Otgk98XnmMU+nZenHt/+VhnBPWwgrJsyrdcw6i23w==
 
 tty-browserify@0.0.0:
   version "0.0.0"
@@ -11163,6 +11239,11 @@ utila@^0.4.0, utila@~0.4:
   resolved "https://registry.yarnpkg.com/utila/-/utila-0.4.0.tgz#8a16a05d445657a3aea5eecc5b12a4fa5379772c"
   integrity sha1-ihagXURWV6Oupe7MWxKk+lN5dyw=
 
+utils-lite@0.1.10:
+  version "0.1.10"
+  resolved "https://registry.npmjs.org/utils-lite/-/utils-lite-0.1.10.tgz#d2908c0482e23c31e6b082558540e7134ffad7d7"
+  integrity sha512-jlHvdtI8MyWURF/3u+ufIjf1Cs5WjN6WZl9qO8dEkZsVjaI7X5YMUhaCFzkvB69ljt6fo4Dd7V/Oj2NJOFDFOQ==
+
 utils-merge@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
@@ -11172,6 +11253,17 @@ uuid@^3.3.2, uuid@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
+
+v-charts@^1.19.0:
+  version "1.19.0"
+  resolved "https://registry.npmjs.org/v-charts/-/v-charts-1.19.0.tgz#07b701800b159bd514264ffc8bf12b0405142da3"
+  integrity sha512-vm2HBUmxAsXK0ivwce9LytcpqrItDA5JSPLYVxZXtiuoyhcn80XX1/3dPJd/1GqG1OYv3jfBo1s9ra4q8GowqA==
+  dependencies:
+    echarts-amap "1.0.0-rc.6"
+    echarts-liquidfill "^2.0.2"
+    echarts-wordcloud "^1.1.3"
+    numerify "1.2.9"
+    utils-lite "0.1.10"
 
 v8-compile-cache@^2.0.3:
   version "2.1.0"
@@ -11299,6 +11391,16 @@ vue-loader@^15.9.2:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
+vue-print-nb@^1.5.0:
+  version "1.6.0"
+  resolved "https://registry.npmjs.org/vue-print-nb/-/vue-print-nb-1.6.0.tgz#845e5dbeb7e8a34fad71e625890e03f10c77f7a9"
+  integrity sha512-qxhw/b5djaBMRiBWwkZeISBOAgWmCekS/ShfCpO/HG1uUgchyLP/KTDUO5MaaHY147M5DC2Dox1mzhgm038OSA==
+  dependencies:
+    core-js "^3.6.5"
+    echarts "^5.0.2"
+    qrcodejs2 "0.0.2"
+    vue "^2.6.11"
+
 vue-router@^3.4.7:
   version "3.4.7"
   resolved "https://registry.npm.taobao.org/vue-router/download/vue-router-3.4.7.tgz#bf189bafd16f4e4ef783c4a6250a3090f2c1fa1b"
@@ -11374,6 +11476,15 @@ walker@^1.0.7, walker@~1.0.5:
   integrity sha1-L3+bj9ENZ3JisYqITijRlhjgKPs=
   dependencies:
     makeerror "1.0.x"
+
+wangeditor@^4.6.6:
+  version "4.6.17"
+  resolved "https://registry.npmjs.org/wangeditor/-/wangeditor-4.6.17.tgz#83206112056548259697b17fee4b3ec726b73967"
+  integrity sha512-qgupRHxvSEDh5tyGwEauq4u0sEQLCMYVqN8aRL3CFmWkt6YGlHnN/Yh4lMuKfE83bl+ma3d109sXgH0+PYR3yA==
+  dependencies:
+    "@babel/runtime" "^7.11.2"
+    "@babel/runtime-corejs3" "^7.11.2"
+    tslib "^2.1.0"
 
 watchpack@^1.6.1:
   version "1.6.1"
@@ -11784,3 +11895,15 @@ yorkie@^2.0.0:
     is-ci "^1.0.10"
     normalize-path "^1.0.0"
     strip-indent "^2.0.0"
+
+zrender@4.3.2:
+  version "4.3.2"
+  resolved "https://registry.npmjs.org/zrender/-/zrender-4.3.2.tgz#ec7432f9415c82c73584b6b7b8c47e1b016209c6"
+  integrity sha512-bIusJLS8c4DkIcdiK+s13HiQ/zjQQVgpNohtd8d94Y2DnJqgM1yjh/jpDb8DoL6hd7r8Awagw8e3qK/oLaWr3g==
+
+zrender@5.1.0:
+  version "5.1.0"
+  resolved "https://registry.npmjs.org/zrender/-/zrender-5.1.0.tgz#b6a84c3aa7ccc6642ee0519901ca4c0835c4d85e"
+  integrity sha512-c+8VRx52ycbmqwHeHLlo/BAfIHBl/JZNLM6cfDQFgzIH05yb+f5J9F/fbRsP+zGc8dW9XHuhdt8/iqukgMZSeg==
+  dependencies:
+    tslib "2.0.3"
