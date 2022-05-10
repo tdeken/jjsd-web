@@ -20,7 +20,7 @@
       </el-row>
       <el-row :gutter="20">
         <el-col :span="6">
-          <p style="margin: 0">供货着：{{provider.name}}</p>
+          <p style="margin: 0">供货者：{{provider.name}}</p>
         </el-col>
         <el-col :span="10">
           <p style="margin: 0;">地址：{{provider.address}}</p>
