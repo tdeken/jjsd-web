@@ -16,7 +16,9 @@ process.env.VUE_APP_BUILD_TIME = require('dayjs')().format('YYYY-M-D HH:mm:ss')
 const publicPath = process.env.VUE_APP_PUBLIC_PATH || '/'
 
 // 设置不参与构建的库
-const externals = {}
+const externals = {
+  echarts: 'echarts'
+}
 cdnDependencies.forEach(pkg => { externals[pkg.name] = pkg.library })
 
 // 引入文件的 cdn 链接
