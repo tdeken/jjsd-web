@@ -23,7 +23,8 @@
           class="page-login--content-main"
           flex="dir:top main:center cross:center">
           <!-- logo -->
-          <img class="page-login--logo" src="./image/logo@2x.png">
+<!--          <img class="page-login&#45;&#45;logo" src="./image/logo@2x.png">-->
+          <h2>数据中心后台</h2>
           <!-- form -->
           <div class="page-login--form">
             <el-card shadow="never">
@@ -69,19 +70,17 @@
               {{ language.label }}
             </a>
           </p>
-          <p class="page-login--content-footer-copyright">
+          <p class="page-login--content-footer-copyright" onclick="window.open('https://beian.miit.gov.cn')">
+            <img src="./image/b.png" alt="">
             Copyright
             <d2-icon name="copyright"/>
-            2018 D2 Projects 开源组织出品
-            <a href="https://github.com/FairyEver">
-              @FairyEver
-            </a>
+            粤ICP备2021125107号
           </p>
-          <p class="page-login--content-footer-options">
-            <a href="#">帮助</a>
-            <a href="#">隐私</a>
-            <a href="#">条款</a>
-          </p>
+<!--          <p class="page-login&#45;&#45;content-footer-options">-->
+<!--            <a href="#">帮助</a>-->
+<!--            <a href="#">隐私</a>-->
+<!--            <a href="#">条款</a>-->
+<!--          </p>-->
         </div>
       </div>
     </div>

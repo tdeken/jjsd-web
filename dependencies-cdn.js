@@ -10,14 +10,14 @@ module.exports = [
   { name: 'lodash', library: '_', js: 'https://unpkg.com/lodash@4.17.15/lodash.min.js', css: '' },
   { name: 'ua-parser-js', library: 'UAParser', js: 'https://unpkg.com/ua-parser-js@0.7.20/dist/ua-parser.min.js', css: '' },
   { name: 'js-cookie', library: 'Cookies', js: '/js/js.cookie.min.js', css: '' },
-  { name: 'nprogress', library: 'NProgress', js: 'https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js', css: 'https://unpkg.com/nprogress@0.2.0/nprogress.css' },
+  { name: 'nprogress', library: 'NProgress', js: 'https://cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.min.js', css: 'https://cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.min.css' },
   { name: 'dayjs', library: 'dayjs', js: 'https://unpkg.com/dayjs@1.8.17/dayjs.min.js', css: '' },
   { name: 'fuse.js', library: 'Fuse', js: 'https://unpkg.com/fuse.js@5.2.3/dist/fuse.min.js', css: '' },
   { name: 'hotkeys-js', library: 'hotkeys', js: 'https://unpkg.com/hotkeys-js@3.7.3/dist/hotkeys.min.js', css: '' },
   { name: 'qs', library: 'Qs', js: 'https://unpkg.com/qs@6.9.1/dist/qs.js', css: '' },
   { name: 'lowdb', library: 'low', js: 'https://unpkg.com/lowdb@1.0.0/dist/low.min.js', css: '' },
   { name: 'lowdb/adapters/LocalStorage', library: 'LocalStorage', js: 'https://unpkg.com/lowdb@1.0.0/dist/LocalStorage.min.js', css: '' },
-  { name: 'screenfull', library: 'screenfull', js: 'https://cdnjs.cloudflare.com/ajax/libs/screenfull.js/5.2.0/screenfull.min.js', css: '' },
+  { name: 'screenfull', library: 'screenfull', js: 'https://cdn.bootcdn.net/ajax/libs/screenfull.js/5.2.0/screenfull.min.js', css: '' },
   { name: 'sortablejs', library: 'Sortable', js: 'https://unpkg.com/sortablejs@1.10.1/Sortable.min.js', css: '' },
   { name: 'echarts', library: 'echarts', js: 'https://cdn.staticfile.org/echarts/4.8.0/echarts.min.js', css: '' }
 ]
