@@ -44,15 +44,14 @@
         <table>
           <thead>
           <tr>
-            <th>商品条码</th>
+            <th width="150">商品条码</th>
             <th>商品名称</th>
-            <th>数量</th>
-            <th>单位</th>
-            <th>规格</th>
-            <th>单价(元)</th>
-            <th>总金额(元)</th>
-            <th>生产日期</th>
-            <th>保质日期</th>
+            <th width="100">数量</th>
+            <th width="50">单位</th>
+            <th width="100">规格</th>
+            <th width="100">单价(元)</th>
+            <th width="150">总金额(元)</th>
+            <th width="300">备注</th>
           </tr>
           </thead>
           <tbody>
@@ -64,8 +63,7 @@
               <td align="center">{{ item.format }}</td>
               <td align="center">{{ item.price }}</td>
               <td align="center">{{ item.total }}</td>
-              <td align="center">{{ item.product_date }}</td>
-              <td align="center">{{ item.shelf_life }}</td>
+              <td align="center"></td>
             </tr>
           </tbody>
         </table>
