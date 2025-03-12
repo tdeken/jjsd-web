@@ -63,7 +63,7 @@
               <td align="center">{{ item.format }}</td>
               <td align="center">{{ item.price }}</td>
               <td align="center">{{ item.total }}</td>
-              <td align="center"></td>
+              <td align="center">{{ item.remark }}</td>
             </tr>
           </tbody>
         </table>

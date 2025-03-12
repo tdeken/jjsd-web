@@ -68,13 +68,8 @@ export default {
           align: 'center'
         },
         {
-          title: '生产日期',
-          key: 'product_date',
-          align: 'center'
-        },
-        {
-          title: '保质日期',
-          key: 'shelf_life',
+          title: '备注',
+          key: 'remark',
           align: 'center'
         }
       ],
