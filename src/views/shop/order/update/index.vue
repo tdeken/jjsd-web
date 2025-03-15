@@ -64,6 +64,10 @@
           <el-input-number v-model="addGoodsForm.book_num" :precision="1" :step="0.5" :min="0.5"></el-input-number>
         </el-form-item>
 
+        <el-form-item label="备注：" :label-width="formLabelWidth" prop="goods_remark">
+          <el-input style="width: 340px" :rows="3" type="textarea" v-model="addGoodsForm.goods_remark"></el-input>
+        </el-form-item>
+
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button @click="resetAddGoodsForm('addGoodsForm')">取 消</el-button>
@@ -82,6 +86,10 @@
 
         <el-form-item label="下订数量：" :label-width="formLabelWidth" prop="book_num">
           <el-input-number v-model="editGoodsForm.book_num" :precision="1" :step="0.5" :min="0.5"></el-input-number>
+        </el-form-item>
+
+        <el-form-item label="备注：" :label-width="formLabelWidth" prop="goods_remark">
+          <el-input style="width: 340px" :rows="3" type="textarea" v-model="editGoodsForm.goods_remark"></el-input>
         </el-form-item>
 
       </el-form>
@@ -112,13 +120,15 @@ export default {
         order_id: 0,
         goods_id: '',
         book_num: 1,
-        price: '0.00'
+        price: '0.00',
+        goods_remark: ''
       },
       editGoodsForm: {
         book_id: 0,
         book_num: 0,
         price: '0.00',
-        order_id: 0
+        order_id: 0,
+        goods_remark: ''
       },
       price_info: {
         retail_price: 0,
@@ -172,6 +182,11 @@ export default {
         {
           title: '产品编号',
           key: 'number',
+          align: 'center'
+        },
+        {
+          title: '备注',
+          key: 'goods_remark',
           align: 'center'
         }
       ],
