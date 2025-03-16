@@ -297,6 +297,7 @@ export default {
     showBookGoods ({ row }) {
       bookShow({ address_id: this.addGoodsForm.address_id, order_id: this.addGoodsForm.order_id, book_id: row.id }).then(res => {
         this.editGoodsForm.book_id = row.id
+        this.editGoodsForm.goods_remark = row.goods_remark
         this.editGoodsForm.book_num = res.data.book_num
         this.editGoodsForm.price = res.data.price
         this.editGoodsForm.address_id = this.addGoodsForm.address_id
